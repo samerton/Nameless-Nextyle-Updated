@@ -1,0 +1,207 @@
+/*
+ *  Custom CSS for Nextyle template
+ */
+
+.nextyle-headtop {
+	background-size: cover;
+	background-color: rgb(0, 0, 0) !important;
+	height: 200px;
+	width: 100%;
+}
+
+.nextyle-headtop .logo {
+	margin: 25px 0;
+	height: 150px;
+}
+
+.navbar {
+	padding: 0px !important;
+}
+
+.nav-link {
+	padding: .8em 1em !important;
+}
+
+.navbar-brand {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.nav-item {
+    margin-left: 0rem !important;
+}
+
+.card-header a {
+	color: white;
+}
+
+.card-header a:hover {
+	text-decoration: underline !important;
+}
+
+@media (min-width: 544px) {
+	.navbar {
+		border-radius: 0px !important;
+	}
+}
+
+.navbar-red {
+	background-color: #872722;
+	border-top: 10px solid #8c4340;
+}
+.navbar-red .active {
+	background-color: #8c4340;
+}
+.header-red {
+	background-color: #872722;
+	color: white;
+	border-bottom: 5px solid #d04f49;
+}
+.btn-red {
+	color: #fff;
+	background-color: #872722;
+	border-bottom: 3px solid #d04f49;
+}
+.btn-red:hover {
+	color: #fff;
+	background-color: #7a231f;
+}
+.panel-red {
+	border-color: #872722;
+}
+.panel-red .panel-heading {
+	color: #fff;
+	background-color: #872722;
+	border-bottom: 5px solid #d04f49;
+}
+
+
+
+
+
+.navbar-blue {
+	background-color: #25488e;
+	border-top: 10px solid #5d85d5;
+}
+.navbar-blue .active {
+	background-color: #5d85d5;
+}
+.header-blue {
+	background-color: #25488e;
+	color: white;
+	border-bottom: 5px solid #5d85d5;
+}
+.btn-blue {
+	color: #fff;
+	background-color: #25488e;
+	border-bottom: 3px solid #5d85d5;
+}
+.btn-blue:hover {
+	color: #fff;
+	background-color: #1f3d7a;
+}
+.panel-blue {
+	border-color: #25488e;
+}
+.panel-blue .panel-heading {
+	color: #fff;
+	background-color: #25488e;
+	border-bottom: 5px solid #5d85d5;
+}
+
+
+
+
+.navbar-gold {
+	background-color: #eaac02;
+	border-top: 10px solid #b18202;
+}
+.navbar-gold .active {
+	background-color: #b18202;
+}
+.header-gold {
+	background-color: #eaac02;
+	color: white;
+	border-bottom: 5px solid #b18202;
+}
+.btn-gold {
+	color: #fff;
+	background-color: #eaac02;
+	border-bottom: 3px solid #b18202;
+}
+.btn-gold:hover {
+	color: #fff;
+	background-color: #e3a702;
+}
+.panel-gold {
+	border-color: #eaac02;
+}
+.panel-gold .panel-heading {
+	color: #fff;
+	background-color: #eaac02;
+	border-bottom: 5px solid #b18202;
+}
+
+/*
+ *  Temp breadcrumb fix
+ */
+.breadcrumb {
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #eceeef;
+  border-radius: .25rem;
+}
+
+.breadcrumb::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.breadcrumb > li {
+  float: left;
+}
+
+.breadcrumb > li + li::before {
+  padding-right: .5rem;
+  padding-left: .5rem;
+  color: #818a91;
+  content: "/";
+}
+
+.breadcrumb > .active {
+  color: #818a91;
+}
+
+.white-text {
+	color: #fff !important;
+}
+
+/*
+ *  Remove auto-caret
+ */
+.no-caret::after {
+	border: none;
+}
+
+.custom-nav-exclaim {
+	color: red;
+}
+
+/* Credit to bootsnipp.com for the css for the color graph */
+.colorgraph {
+	height: 5px;
+	border-top: 0;
+	background: #c4e17f;
+	border-radius: 5px;
+	background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+	background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+	background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+	background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+.emojione {
+	height: 24px;
+	width: 24px;
+}
