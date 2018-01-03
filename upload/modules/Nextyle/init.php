@@ -2,7 +2,7 @@
 /*
  *	Made by Nexious
  *  https://nexious.net
- *  NamelessMC version 2.0.0-dev
+ *  NamelessMC version 2.0.0-pr3
  *
  *  License: MIT
  *
@@ -10,7 +10,7 @@
  */
 
 // Custom language
-$nextyle_language = new Language('modules/Nextyle/language');
+$nextyle_language = new Language(ROOT_PATH . '/modules/Nextyle/language');
 
 // Define URLs which belong to this module
 $pages->add('Nextyle', '/admin/nextyle', 'pages/nextyle.php');
@@ -23,7 +23,7 @@ $admin_sidebar['nextyle'] = array(
 );
 
 // Get Nextyle theme settings
-require('modules/Nextyle/pages/getvariables.php');
+require(ROOT_PATH . '/modules/Nextyle/pages/getvariables.php');
 
 $smarty->assign(array(
 	'NEXTYLE_COLOR' => $nextyle_color,

@@ -2,16 +2,16 @@
 /*
  *	Made by Nexious
  *  https://www.nexious.net/
- *  NamelessMC version 2.0.0-pr1
+ *  NamelessMC version 2.0.0-pr3
  *
  *  License: MIT
  *
  *  Nexstyle template
  */
  
-require_once('modules/Nextyle/pages/getvariables.php');
+require_once(ROOT_PATH . '/modules/Nextyle/pages/getvariables.php');
  
-$template_version = 'v2.0.0-pr1'; // Version number of template
+$template_version = 'v2.0.0-pr3'; // Version number of template
 $nl_template_version = '2.0.0-pr3'; // Nameless version template is designed for
 
 if(!isset($admin_styles)){
