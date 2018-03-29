@@ -32,7 +32,7 @@
 	  </div>
 	</div>
   </div>
-{if $CAN_VIEW}
+{if !isset($CAN_VIEW) || (isset($CAN_VIEW) && $CAN_VIEW eq true)}
   {if !empty($WIDGETS)}
     <div class="row">
       <div class="col-md-8">
@@ -93,7 +93,7 @@
 			  </div>
 
 			  <div class="panel-heading">
-				<h2 class="panel-title" style="display:inline;"><a href="{$post.profile}">{$post.nickname}:</a></h2>
+				<h2 class="panel-title" style="display:inline;"><a href="{$post.profile}" style="{$post.user_style}">{$post.nickname}:</a></h2>
 				<span class="pull-right"><span rel="tooltip" data-original-title="{$post.date}">{$post.date_rough}</span></span>
 			  </div>
 
@@ -107,7 +107,7 @@
 				<a href="{if $post.reactions_link ne "#"}{$post.reactions_link}{else}#{/if}" class="pop" data-content='{if isset($post.reactions.reactions)} {foreach from=$post.reactions.reactions item=reaction name=reactions}<a href="{$reaction.profile}" style="{$reaction.style}"><img class="img-rounded" src="{$reaction.avatar}" alt="{$reaction.username}" style="max-height:30px; max-width:30px;" /> {$reaction.nickname}</a>{if !$smarty.foreach.reactions.last}<br />{/if}{/foreach} {else}{$post.reactions.count}{/if}'><i class="fa fa-thumbs-up"></i> {$post.reactions.count} </a> | <a href="#" data-toggle="modal" data-target="#replyModal{$post.id}"><i class="fa fa-comments"></i> {$post.replies.count}</a>
 				<span class="pull-right">
 				  {if (isset($CAN_MODERATE) && $CAN_MODERATE eq 1) || $post.self eq 1}
-				    <form action="" method="post" id="delete{$post.id}">
+				    <form action="" method="post" id="delete{$post.id}" style="display:none">
 					  <input type="hidden" name="post_id" value="{$post.id}">
 					  <input type="hidden" name="action" value="delete">
 				      <input type="hidden" name="token" value="{$TOKEN}">

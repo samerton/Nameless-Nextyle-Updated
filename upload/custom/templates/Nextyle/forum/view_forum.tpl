@@ -3,7 +3,6 @@
 <div class="container" style="padding-top: 2rem;">
 <div class="card">
   <div class="card-block">
-	<div class="container">
 	  <div class="row">
 		<div class="col-md-9">
 		  <ol class="breadcrumb">
@@ -151,7 +150,6 @@
 		  
 		</div>
 	  </div>
-	</div>
   </div>
 </div>
 </div>

@@ -6,7 +6,7 @@
  *
  *  License: MIT
  *
- *  Nexstyle template
+ *  Nextyle template
  */
  
 require_once(ROOT_PATH . '/modules/Nextyle/pages/getvariables.php');
@@ -15,6 +15,8 @@ $template_version = 'v2.0.0-pr3'; // Version number of template
 $nl_template_version = '2.0.0-pr3'; // Nameless version template is designed for
 
 if(!isset($admin_styles)){
+
+$route = rtrim($_GET['route'], '/');
 
 // Paths to CSS files
 $css = array(
@@ -30,7 +32,7 @@ $js_sources = array(
 	(defined('CONFIG_PATH') ? CONFIG_PATH : '') . '/custom/templates/Nextyle/js/tether.min.js',
 	(defined('CONFIG_PATH') ? CONFIG_PATH : '') . '/custom/templates/Nextyle/js/bootstrap.min.js'
 );
-if(defined('PAGE') && PAGE == 'cc_messaging'){
+if($route == '/user/messaging'){
 	$js_sources[] = (defined('CONFIG_PATH') ? CONFIG_PATH : '') . '/custom/templates/Nextyle/js/bootstrap3-typeahead.min.js';
 }
 
@@ -238,7 +240,7 @@ $js.= '
   }
   
   // Registration page/login page checkbox
-  if(defined('PAGE') && (PAGE == 'login' || PAGE == 'register' || PAGE == 'complete_signup')){
+  if($route == '/login' || $route == '/register' || $route == '/complete_signup'){
   	$js .= '
   	<script>
   	$(function () {
