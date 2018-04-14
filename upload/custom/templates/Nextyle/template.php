@@ -46,12 +46,8 @@ if(isset($page_loading) && $page_loading == '1'){
 	</script>';
 } else $js = '';
 
-echo "<style>
-
-.nextyle-headtop {
-	background: url('$nextyle_bg') no-repeat center top;
-}
-</style>";
+// <style> tags
+$style = array('<style>.nextyle-headtop {background: url(\'' . $nextyle_bg . '\') no-repeat center top;}</style>');
 
 $js.= '
 	<script type="text/javascript">
