@@ -1,6 +1,6 @@
 {include file='navbar.tpl'}
 
-<div class="container" style="padding-top: 5rem;">
+<div class="container">
   <div class="card">
     <div class="card-block">
 	  <form action="" method="post">
@@ -14,6 +14,7 @@
 		
 	    <p>{$TFA_ENTER_CODE}</p>
 	    <input type="text" class="form-control" name="tfa_code">
+	    <input type="hidden" name="tfa" value="true">
 	    <input type="hidden" name="token" value="{$TOKEN}">
 	    <br />
 	    <input type="submit" value="{$SUBMIT}" class="btn btn-primary">

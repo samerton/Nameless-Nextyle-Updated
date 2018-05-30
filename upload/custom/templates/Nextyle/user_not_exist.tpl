@@ -6,10 +6,10 @@
 	  <div class="jumbotron">
 		<center>
 		  <h2>{$NOT_FOUND}</h2>
-		  </br>
+		  <br />
 		  <div class="btn-group" role="group" aria-label="...">
-			<a href="#" class="btn btn-primary btn-lg" onclick="window.history.back()">{$BACK}</a>
-			<a href="/" class="btn btn-success btn-lg">{$HOME}</a>
+			<button href="#" class="btn btn-primary btn-lg" onclick="javascript:history.go(-1)">{$BACK}</button>
+			<a href="{$SITE_HOME}" class="btn btn-success btn-lg">{$HOME}</a>
 		  </div>
 		</center>
 	  </div>

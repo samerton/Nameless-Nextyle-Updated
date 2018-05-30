@@ -1,6 +1,6 @@
 {include file='navbar.tpl'}
 
-<div class="container" style="padding-top:2rem;">
+<div class="container">
   <div class="card">
     <div class="card-block">
 	  <h2 style="display:inline;">{$VIEWING_RESOURCE}</h2> {$RELEASE_TAG}
@@ -15,11 +15,11 @@
 	  
 	  <div class="row">
 	    <div class="col-md-9">
-	      <div class="forum-post">
+	      <div class="forum_post">
 	        {$DESCRIPTION}
 	      </div>
 
-		  <br />{$CONTRIBUTORS}
+		  <br />{if $HAS_CONTRIBUTORS eq 1}{$CONTRIBUTORS} {$RESOURCE_CONTRIBUTORS}{/if}
 		  
 		  <hr />
 		  

@@ -42,6 +42,7 @@
 			  <div class="dropdown-menu" aria-labelledby="Preview">
 				<a class="dropdown-item" target="_blank" href="https://github.com/NamelessMC/Nameless">Powered by NamelessMC</a>
 				<a class="dropdown-item" href="{$TERMS_LINK}">{$TERMS_TEXT}</a>
+				<a class="dropdown-item" href="{$PRIVACY_LINK}">{$PRIVACY_TEXT}</a>
 			  </div>
 			</li>
 		  </ul>

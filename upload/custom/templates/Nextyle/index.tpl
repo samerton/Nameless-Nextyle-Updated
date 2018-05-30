@@ -16,7 +16,7 @@
 	<div class="row">
 	
 	  {if isset($NEWS)}
-	  <div class="col-md-8">
+	  <div class="col-md-9">
 	    <center><h2>{$LATEST_ANNOUNCEMENTS} <i class="fa fa-bullhorn"></i></h2></center>
 		<hr />
 		{foreach from=$NEWS item=item}
@@ -34,7 +34,7 @@
 		</div>
 		{/foreach}
 	  </div>
-	  <div class="col-md-4">
+	  <div class="col-md-3">
 	  
 	  {else}
 	  <div class="col-md-4 offset-md-4">
@@ -45,7 +45,6 @@
 		{if count($WIDGETS)}
 		  {foreach from=$WIDGETS item=widget}
 			{$widget}
-			<br /><br />
 		  {/foreach}
 		{/if}
 	    

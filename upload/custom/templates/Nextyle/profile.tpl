@@ -1,6 +1,6 @@
 {include file='navbar.tpl'}
 
-<div class="container" style="padding-top: 2rem;">
+<div class="container">
   <div class="jumbotron" style="background-image:url('{$BANNER}');">
 	<div class="row">
 	  <div class="col-md-8">
@@ -289,7 +289,7 @@
   </div>
   <div class="col-md-4">
   {foreach from=$WIDGETS item=widget}
-    {$widget}<br /><br />
+    {$widget}
   {/foreach}
   </div>
   </div>

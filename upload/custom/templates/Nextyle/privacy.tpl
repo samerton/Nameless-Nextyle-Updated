@@ -3,11 +3,9 @@
 <div class="container">
     <div class="card">
         <div class="card-block">
-            <h2>{$TERMS}</h2>
+            <h2>{$PRIVACY_POLICY}</h2>
 
-            <p>{$SITE_TERMS}</p>
-            <hr />
-            <p>{$NAMELESS_TERMS}</p>
+            <p>{$POLICY}</p>
 
         </div>
     </div>

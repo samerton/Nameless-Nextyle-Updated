@@ -1,6 +1,6 @@
 {include file='navbar.tpl'}
 
-<div class="container" style="padding-top: 2rem;">
+<div class="container">
     <div class="card">
         <div class="card-block">
             <div class="row">
@@ -112,10 +112,10 @@
                                    placeholder="{$SEARCH}">
                             <input type="hidden" name="token" value="{$TOKEN}">
                             <span class="input-group-btn">
-			    <button type="submit" class="btn btn-default">
-				  <i class="fa fa-search"></i>
-			    </button>
-			  </span>
+                                   <button type="submit" class="btn btn-secondary">
+                                     <i class="fa fa-search"></i>
+                                   </button>
+                            </span>
                         </div>
                     </form>
 
@@ -126,21 +126,12 @@
                             <h2>{$STATS} <i class="fa fa-bar-chart"></i></h2>
                             {$USERS_REGISTERED}<br/>
                             {$LATEST_MEMBER}
-
-                            <hr/>
-
-                            <h3>{$ONLINE_USERS}</h3>
-                            {$ONLINE_USERS_LIST}
-
                         </div>
                     </div>
 
                     {if count($WIDGETS)}
-                        <br/>
                         {foreach from=$WIDGETS item=widget}
                             {$widget}
-                            <br/>
-                            <br/>
                         {/foreach}
                     {/if}
                 </div>

@@ -2,7 +2,7 @@
 /*
  *	Made by Nexious
  *  https://www.nexious.net/
- *  NamelessMC version 2.0.0-pr3
+ *  NamelessMC version 2.0.0-pr4
  *
  *  License: MIT
  *
@@ -11,8 +11,8 @@
  
 require_once(ROOT_PATH . '/modules/Nextyle/pages/getvariables.php');
  
-$template_version = 'v2.0.0-pr3'; // Version number of template
-$nl_template_version = '2.0.0-pr3'; // Nameless version template is designed for
+$template_version = 'v2.0.0-pr4'; // Version number of template
+$nl_template_version = '2.0.0-pr4'; // Nameless version template is designed for
 
 if(!isset($admin_styles)){
 
@@ -233,6 +233,22 @@ $js.= '
         $(\'.show-punishment\').modal(\'show\');
       }
     </script>';
+  } else {
+      if(defined('COOKIE_NOTICE')){
+          $js .= '<script type="text/javascript">
+          toastr.options.timeOut = 0;
+          toastr.options.extendedTimeOut = 0;
+          toastr.options.closeButton = true;
+          
+          toastr.options.onclick = function() { $(\'.toast .toast-close-button\').focus(); }
+          toastr.options.onHidden = function() { $.cookie(\'accept\', \'accepted\', { path: \'/\' }); }
+          
+          toastr.options.positionClass = \'toast-bottom-left\';
+          
+          toastr.info(\'' . $language->get('general', 'cookie_notice') . '\');
+          
+          </script>';
+      }
   }
   
   // Registration page/login page checkbox
