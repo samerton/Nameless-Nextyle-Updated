@@ -40,7 +40,7 @@
                                                                     <a href="{$subforum->last_post->profile}"><img
                                                                                 alt="{$subforum->last_post->profile}"
                                                                                 style="height:40px; width:40px;"
-                                                                                class="img-centre rounded"
+                                                                                class="img-centre img-rounded"
                                                                                 src="{$subforum->last_post->avatar}"/></a>
                                                                 </div>
                                                             </div>

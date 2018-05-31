@@ -37,19 +37,18 @@ if($route == '/user/messaging'){
 }
 
 // Page load time
-$page_load = microtime(true) - $start;
-if(isset($page_loading) && $page_loading == '1'){
-	$js = '
-	<script type="text/javascript">
-	var timer = \'' . str_replace('{x}', round($page_load, 3), $language->get('general', 'page_loaded_in')) . '\';
-	$(\'#page_load_tooltip\').attr(\'title\', timer).tooltip();
-	</script>';
-} else $js = '';
+if(isset($page_loading) && $page_loading == '1') {
+    $page_load_js = '
+<script type="text/javascript">
+    var timer = \'' . $language->get('general', 'page_loaded_in') . '\';
+    $(\'#page_load_tooltip\').attr(\'title\', timer).tooltip();
+</script>';
+}
 
 // <style> tags
 $style = array('<style>.nextyle-headtop {background: url(\'' . $nextyle_bg . '\') no-repeat center top;}</style>');
 
-$js.= '
+$js = '
 	<script type="text/javascript">
 	  $(function () {
 		$(\'[data-toggle="tooltip"]\').tooltip()

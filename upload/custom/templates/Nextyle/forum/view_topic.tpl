@@ -86,7 +86,7 @@
                                         <small>{$reply.user_title}</small>
                                     {/if}
                                     <hr/>
-                                    {$reply.user_posts_count} {$POSTS}<br/>
+                                    {$reply.user_posts_count}<br/>
                                     <hr/>
                                 </center>
                                 {if count($reply.fields)}
