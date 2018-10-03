@@ -1,3 +1,4 @@
+{include file='header.tpl'}
 {include file='navbar.tpl'}
 
 <div class="container">
@@ -93,7 +94,7 @@
 			  </div>
 
 			  <div class="panel-heading">
-				<h2 class="panel-title" style="display:inline;"><a href="{$post.profile}" style="{$post.user_style}">{$post.nickname}:</a></h2>
+				<h2 class="panel-title" style="display:inline;"><a data-poload="{$USER_INFO_URL}{$post.user_id}" data-html="true" data-placement="top" href="{$post.profile}" style="{$post.user_style}">{$post.nickname}:</a></h2>
 				<span class="pull-right"><span rel="tooltip" data-original-title="{$post.date}">{$post.date_rough}</span></span>
 			  </div>
 

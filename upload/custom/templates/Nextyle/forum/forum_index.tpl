@@ -1,3 +1,4 @@
+{include file='header.tpl'}
 {include file='navbar.tpl'}
 
 <div class="container">
@@ -50,7 +51,7 @@
                                                                 <span data-toggle="tooltip" data-trigger="hover"
                                                                       data-original-title="{$subforum->last_post->post_date}">{$subforum->last_post->date_friendly}</span><br/>{$BY}
                                                                 <a style="{$subforum->last_post->user_style}"
-                                                                   href="{$subforum->last_post->profile}">{$subforum->last_post->username}</a>
+                                                                   href="{$subforum->last_post->profile}" data-poload="{$USER_INFO_URL}{$subforum->last_post->post_creator}" data-html="true" data-placement="top">{$subforum->last_post->username}</a>
                                                             </div>
                                                         </div>
                                                     {else}

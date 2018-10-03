@@ -1,3 +1,4 @@
+{include file='header.tpl'}
 {include file='navbar.tpl'}
 
 <div class="home-news">
@@ -28,7 +29,7 @@
 		  <div class="card-block">
 			{$item.content}
 			<hr />
-			<a href="{$item.author_url}"><img class="img-circle" src="{$item.author_avatar}" style="max-height:30px; max-width=30px;" /></a> <a href="{$item.author_url}" style="{$item.author_style}">{$item.author_name}</a>
+			<a href="{$item.author_url}"><img class="img-circle" src="{$item.author_avatar}" style="max-height:30px; max-width=30px;" /></a> <a data-poload="{$USER_INFO_URL}{$item.author_id}" data-html="true" data-placement="top" href="{$item.author_url}" style="{$item.author_style}">{$item.author_name}</a>
 		    <span class="pull-right"><a href="{$item.url}" class="btn btn-{$NEXTYLE_COLOR} btn-sm">{$READ_FULL_POST} &raquo;</a></span>
 		  </div>
 		</div>

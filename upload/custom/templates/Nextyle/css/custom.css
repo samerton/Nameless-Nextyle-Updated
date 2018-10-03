@@ -545,3 +545,12 @@
 	height: 24px;
 	width: 24px;
 }
+
+.popover-content {
+	padding: 9px 10px;
+}
+
+.tag {
+	max-width: 100%;
+	white-space: normal;
+}
