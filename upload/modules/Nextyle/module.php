@@ -44,7 +44,7 @@ class Nextyle_Module extends Module {
 		// Not necessary
 	}
 
-	public function onPageLoad($user, $pages, $cache, $smarty, $navs, $widgets){
+	public function onPageLoad($user, $pages, $cache, $smarty, $navs, $widgets, $template){
 		// Permissions
 		PermissionHandler::registerPermissions('Nextyle', array(
 			'admincp.nextyle' => $this->_language->get('moderator', 'staff_cp') . ' &raquo; Nextyle'
