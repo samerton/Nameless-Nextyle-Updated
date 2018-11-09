@@ -16,5 +16,13 @@ $language = array(
 	/*
 	 *  General terms
 	 */ 
-	'nextyle_title' => 'Nextyle'
+	'nextyle_title' => 'Nextyle',
+	'theme' => 'Theme',
+	'red' => 'Red',
+	'blue' => 'Blue',
+	'gold' => 'Gold',
+	'header_background' => 'Header background image',
+	'logo' => 'Logo',
+	'unable_to_write_to_settings' => 'Unable to write to <strong>modules/Nextyle/pages/settings.php</strong>. Please check file permissions.',
+	'successfully_updated' => 'Successfully updated.',
 );
