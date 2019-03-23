@@ -2,7 +2,7 @@
 /*
  *	Made by Nexious
  *  https://nexious.net
- *  NamelessMC version 2.0.0-pr5
+ *  NamelessMC version 2.0.0-pr6
  *
  *  License: MIT
  *
@@ -18,8 +18,8 @@ class Nextyle_Module extends Module {
 
 		$name = 'Nextyle';
 		$author = '<a href="https://www.spigotmc.org/members/nexious.331758/" target="_blank" rel="nofollow noopener">Nexious</a> + <a href="https://samerton.me" target="_blank" rel="nofollow noopener">Samerton</a>';
-		$module_version = '1.1.1';
-		$nameless_version = '2.0.0-pr5';
+		$module_version = '1.1.2';
+		$nameless_version = '2.0.0-pr6';
 
 		parent::__construct($this, $name, $author, $module_version, $nameless_version);
 
