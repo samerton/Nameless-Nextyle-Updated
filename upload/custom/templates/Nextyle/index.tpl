@@ -23,10 +23,10 @@
 		{foreach from=$NEWS item=item}
 		<div class="card">
 		  <div class="card-header text-white header-{$NEXTYLE_COLOR}">
-			<a href="{$item.url}">{$item.title}</a>
+			{if $item.label}{$item.label} {/if}<a href="{$item.url}">{$item.title}</a>
 			<span class="pull-right" data-toggle="tooltip" title="{$item.date}">{$item.time_ago}</span>
 		  </div>
-		  <div class="card-block">
+		  <div class="card-block forum_post">
 			{$item.content}
 			<hr />
 			<a href="{$item.author_url}"><img class="img-circle" src="{$item.author_avatar}" style="max-height:30px; max-width=30px;" /></a> <a data-poload="{$USER_INFO_URL}{$item.author_id}" data-html="true" data-placement="top" href="{$item.author_url}" style="{$item.author_style}">{$item.author_name}</a>

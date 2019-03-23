@@ -554,3 +554,7 @@
 	max-width: 100%;
 	white-space: normal;
 }
+
+[class*="float-right"] {
+	float: right;
+}

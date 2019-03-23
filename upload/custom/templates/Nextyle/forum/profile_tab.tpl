@@ -7,7 +7,7 @@
 	<h4>{$PF_LATEST_POSTS_TITLE}</h4>
 	{foreach from=$PF_LATEST_POSTS item=post}
 		<div class="card">
-			<div class="card-header">
+			<div class="card-header text-white header-{$NEXTYLE_COLOR}">
 				<a href="{$post.link}">{$post.title}</a>
 			</div>
 			<div class="card-block">

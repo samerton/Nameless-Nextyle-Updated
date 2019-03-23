@@ -2,11 +2,11 @@
 {include file='navbar.tpl'}
 
 <div class="container">
-  <div class="jumbotron" style="background-image:url('{$BANNER}');">
+  <div class="jumbotron" style="background-image:url('{$BANNER}');background-size:cover;">
 	<div class="row">
 	  <div class="col-md-8">
 		<h2>
-		  <img class="img-rounded" style="height:60px;width=60px;" src="{$AVATAR}" />
+		  <img class="img-rounded" style="height:60px;width:60px;" src="{$AVATAR}" />
 		  <strong{if $USERNAME_COLOUR != false} style="{$USERNAME_COLOUR}"{/if}>{$NICKNAME}</strong> 
 		  {$GROUP}
 		</h2>
@@ -20,6 +20,11 @@
 			<!--<a href="{$FOLLOW_LINK}" class="btn btn-{$NEXTYLE_COLOR} btn-lg"><i class="fa fa-users fa-fw"></i> {$FOLLOW}</a>-->
 			{if $MOD_OR_ADMIN ne true}<a href="#" data-toggle="modal" data-target="#blockModal" class="btn btn-red btn-lg"><i class="fa fa-ban fa-fw"></i></a>{/if}
 			<a href="{$MESSAGE_LINK}" class="btn btn-{$NEXTYLE_COLOR} btn-lg"><i class="fa fa-envelope fa-fw"></i></a>
+			{if isset($RESET_PROFILE_BANNER)}
+			  <a href="{$RESET_PROFILE_BANNER_LINK}" class="btn btn-red btn-lg" rel="tooltip" data-title="{$RESET_PROFILE_BANNER}">
+			    <i class="fa fa-picture-o fa-fw"></i>
+			  </a>
+			{/if}
 		  </div>
 		    {else}
 		  <div class="btn-group">
@@ -90,7 +95,7 @@
 
 			<article class="panel panel-{$NEXTYLE_COLOR}">
 			  <div class="panel-heading icon">
-				<img class="img-circle" style="height:40px; width=40px;" src="{$post.avatar}" />
+				<img class="img-circle" style="height:40px; width:40px;" src="{$post.avatar}" />
 			  </div>
 
 			  <div class="panel-heading">
@@ -237,42 +242,41 @@
 
 		<div class="tab-pane" id="about" role="tabpanel">
 		  <div class="row">
-		    <div class="col-md-4">
-			  <div class="card">
-			    <div class="card-block">
-				  {if isset($ABOUT_FIELDS.minecraft)}
-				    <center>
-					  <img src="{$ABOUT_FIELDS.minecraft.image}" alt="{$USERNAME}" class="img-rounded" />
-					  <h2{if $USERNAME_COLOUR != false} style="{$USERNAME_COLOUR}"{/if}>{$NICKNAME}</h2>
-					  {$USER_TITLE}
-					</center>
-					<hr />
-					<ul>
-					  <li>{$ABOUT_FIELDS.registered.title}</strong> <span rel="tooltip" title="{$ABOUT_FIELDS.registered.tooltip}">{$ABOUT_FIELDS.registered.value}</li>
-					  <li>{$ABOUT_FIELDS.last_seen.title}</strong> <span rel="tooltip" title="{$ABOUT_FIELDS.last_seen.tooltip}">{$ABOUT_FIELDS.last_seen.value}</li>
-					  <li>{$ABOUT_FIELDS.profile_views.title}</strong> {$ABOUT_FIELDS.profile_views.value}</li>
-					</ul>
-				  {else}
-				    <h2{if $USERNAME_COLOUR != false} style="{$USERNAME_COLOUR}"{/if}>{$NICKNAME}</h2>
-					<hr />
-				  {/if}
-				</div>
+			  <div class="col-md-4">
+				  <div class="card">
+					  <div class="card-block">
+						  <center>
+							  <img {if isset($ABOUT_FIELDS.minecraft)}src="{$ABOUT_FIELDS.minecraft.image}{else}class="img-rounded" style="max-height:75px;max-width:75px;" src="{$AVATAR}{/if}" alt="{$USERNAME}" onerror="this.style.display='none'" />
+							  <h2{if $USERNAME_COLOUR != false} style="{$USERNAME_COLOUR}"{/if}>{$NICKNAME}</h2>
+							  {$USER_TITLE}
+						  </center>
+						  <hr />
+						  <ul>
+							  <li><strong>{$ABOUT_FIELDS.registered.title}</strong> <span rel="tooltip" title="{$ABOUT_FIELDS.registered.tooltip}">{$ABOUT_FIELDS.registered.value}</li>
+							  <li><strong>{$ABOUT_FIELDS.last_seen.title}</strong> <span rel="tooltip" title="{$ABOUT_FIELDS.last_seen.tooltip}">{$ABOUT_FIELDS.last_seen.value}</li>
+							  <li><strong>{$ABOUT_FIELDS.profile_views.title}</strong> {$ABOUT_FIELDS.profile_views.value}</li>
+						  </ul>
+					  </div>
+				  </div>
 			  </div>
-			</div>
-			
-			<div class="col-md-8">
-			  <div class="card">
-			    <div class="card-block">
-				  {foreach from=$ABOUT_FIELDS key=key item=field}
-					{if is_numeric($key)}
-					  <h3>{$field.title}</h3>
-					  <p>{$field.value}</p>
-					  <hr />
-					{/if}
-				  {/foreach}
-			    </div>
+
+			  <div class="col-md-8">
+				  <div class="card">
+					  <div class="card-block">
+						  {if !isset($NO_ABOUT_FIELDS)}
+							  {foreach from=$ABOUT_FIELDS key=key item=field name=about_foreach}
+								  {if is_numeric($key)}
+									  <h3>{$field.title}</h3>
+									  <p>{$field.value}</p>
+									  {if !$smarty.foreach.about_foreach.last}<hr />{/if}
+								  {/if}
+							  {/foreach}
+						  {else}
+							  <div class="alert alert-info">{$NO_ABOUT_FIELDS}</div>
+						  {/if}
+					  </div>
+				  </div>
 			  </div>
-			</div>
 		  </div>
 		</div>
 		
@@ -304,34 +308,46 @@
 {/if}
 {if isset($LOGGED_IN)}
   {if isset($SELF)}
-	<!-- Change background image modal -->
-	<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			  <span aria-hidden="true">&times;</span>
-			</button>
-			<h4 class="modal-title" id="imageModalLabel">{$CHANGE_BANNER}</h4>
+	  <!-- Change background image modal -->
+	  <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+			  <div class="modal-content">
+				  <div class="modal-header">
+					  <h5 class="modal-title" id="imageModalLabel">{$CHANGE_BANNER}</h5>
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+					  </button>
+				  </div>
+				  <div class="modal-body">
+					  <form action="" name="updateBanner" method="post" style="display:inline;">
+						  <select name="banner" class="image-picker show-html">
+							  {foreach from=$BANNERS item=banner}
+								  <option data-img-src="{$banner.src}" value="{$banner.name}"{if $banner.active == true} selected{/if}>{$banner.name}</option>
+							  {/foreach}
+						  </select>
+						  <input type="hidden" name="token" value="{$TOKEN}">
+						  <input type="hidden" name="action" value="banner">
+					  </form>
+					  {if isset($PROFILE_BANNER)}
+					  <hr />
+					  <strong>{$UPLOAD_PROFILE_BANNER}</strong>
+					  <br />
+					  <form action="{$UPLOAD_BANNER_URL}" method="post" enctype="multipart/form-data" style="display:inline;">
+						  <label class="btn btn-secondary" style="margin-bottom: 0">
+							  {$BROWSE} <input type="file" name="file" hidden/>
+						  </label>
+						  <input type="hidden" name="token" value="{$TOKEN}">
+						  <input type="hidden" name="type" value="profile_banner">
+						  <input type="submit" value="{$UPLOAD}" class="btn btn-primary">
+						  {/if}
+				  </div>
+				  <div class="modal-footer">
+					  <button type="button" class="btn btn-danger" data-dismiss="modal">{$CANCEL}</button>
+					  <button type="button" onclick="document.updateBanner.submit()" class="btn btn-primary">{$SUBMIT}</button>
+				  </div>
+			  </div>
 		  </div>
-		  <form action="" method="post" style="display:inline;" >
-		    <div class="modal-body">
-			  <select name="banner" class="image-picker show-html">
-			    {foreach from=$BANNERS item=banner}
-				  <option data-img-src="{$banner.src}" value="{$banner.name}"{if $banner.active == true} selected{/if}>{$banner.name}</option>
-				{/foreach}
-			  </select>
-			  <input type="hidden" name="token" value="{$TOKEN}">
-			  <input type="hidden" name="action" value="banner">
-		    </div>
-		    <div class="modal-footer">
-			  <button type="button" class="btn btn-danger" data-dismiss="modal">{$CANCEL}</button>
-			  <input type="submit" class="btn btn-{$NEXTYLE_COLOR}" value="{$SUBMIT}">
-		    </div>
-		  </form>
-		</div>
 	  </div>
-	</div>
   {else}
 	{if $MOD_OR_ADMIN ne true}
 	<!-- Block user modal -->
