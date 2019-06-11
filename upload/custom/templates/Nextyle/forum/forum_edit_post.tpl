@@ -22,7 +22,7 @@
 		  <input type="text" class="form-control form-control-lg" name="title" value="{$TOPIC_TITLE}">
 		</div>
 		
-		  {if count($LABELS) < 0}
+		  {if count($LABELS)}
 		    {foreach from=$LABELS item=label}
 		  <input type="radio" name="topic_label" value="{$label.id}"{if $label.active} checked="checked"{/if}>
 		    {/foreach}
